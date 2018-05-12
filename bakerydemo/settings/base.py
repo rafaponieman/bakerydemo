@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'bakerydemo.breads',
     'bakerydemo.locations',
     'bakerydemo.search',
+    'bakerydemo.users',
 
     'wagtail.contrib.search_promotions',
     'wagtail.contrib.forms',
@@ -175,3 +176,8 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Wagtail settings
 WAGTAIL_SITE_NAME = "bakerydemo"
+
+AUTH_USER_MODEL = 'users.User'
+WAGTAIL_USER_EDIT_FORM = 'bakerydemo.users.forms.CustomUserEditForm'
+WAGTAIL_USER_CREATION_FORM = 'bakerydemo.users.forms.CustomUserCreationForm'
+WAGTAIL_USER_CUSTOM_FIELDS = ['country', ]
